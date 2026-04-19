@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="nom.css">
+     <meta charset = "UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Nom😷💛
+    </title>
+</head>
+<div id="progressBar">
+    <script>
+window.addEventListener("scroll", () => {
+  const scrollTop = document.documentElement.scrollTop;
+  const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+  const progress = (scrollTop / scrollHeight) * 100;
+
+  document.getElementById("progressBar").style.width = progress + "%";
+});
+</script>
+</div>
+<body>
+    <div class="first">
+    <h1>Dear Nom😷</h1>
+    <p>
+        I saw a little bird and it reminded me of you...🤧
+    </p><br>
+    </div>
+
+    <div class="section1 fade-in" id="card1">
+       <h1>What I Like About You</h1>
+        <ul>
+            <li>You're goofy🙄</li>
+            <li>You're weird in a cute way😏.. Like who laughs when anxious💁‍♂️</li>
+            <li>You're elegant💃</li>
+            <li>You're very caring and loving💛</li>
+            <li>You're a kind soul🥺</li>
+        </ul>
+        <br>
+            <button id="btn1">Pick Your Flowers💕</button>
+
+            <div id="msg1" class="hidden">
+                    🌹 You make my days better  
+                    🌻 You bring light into my life  
+                    🌷 I really appreciate you 
+            </div>
+            <script>
+            document.getElementById("btn1").addEventListener("click", () => {
+                document.getElementById("msg1").classList.add("show");
+            });
+            </script>
+            <a href="#card2" class="nav-btn">Keep going✨</a>
+
+    </div>
+       
+        <div class="section2 fade-in" id="card2">
+                   <h1>Moments I Appreciate</h1>
+        <ul>
+            <li>I appreciate the times we've shared together at church</li>
+            <li>I appreciate the jokes we've laughed at together</li>
+            <li>I appreciate your time you've shared with me</li>
+            <li>I appreciate your trust which is rare</li>
+            <li>I appreciate your kind heart</li>
+            <li>I appreciate the moments we've walked together</li>
+            <li>I appreciate the stories we've shared with each other</li>
+            <li>I appreciate your presence</li>
+            </ul>
+            <br>
+            <button id="btn2">See why🙂</button>
+            <div id="msg2" class="hidden">That Easter you came to me...I knew it was meant to be💖</div>
+                <script>
+                document.getElementById("btn2").addEventListener("click", () => {
+                document.getElementById("msg2").classList.add("show");
+            });
+                </script>
+                <a href="#card3" class="nav-btn">There's more🤗</a>
+
+        </div>
+
+        <div class="section3 fade-in" id="card3">
+       <h1>Things I Look Forward To💑</h1>
+        <ul>
+            <li>I look forward to more banter moments with you</li>
+            <li>I look forward to a deep connection between us</li>
+            <li>I look forward to more laughter moments with you</li>
+            <li>I look forward to a growing and fruitful relationship</li>   
+            <li>I look forward to a faithful and loving relationship</li>         
+        </ul>
+        <br><br><br>
+            <a href="#finalSection" class="nav-btn">Almost there💛</a>
+        </div><br>
+
+    <div class="section4 fade-in" id="finalSection">
+    <h2>Just wanted you to know💗</h2>
+    <p2 id="typewriter"></p2><br>
+        </div>
+        <a href="https://www.youtube.com/watch?v=fTbYpSIF22s&list=RDfTbYpSIF22s&start_radio=1"
+    target="_blank" rel="noopener noreferrer" class="song-link"
+    >
+        This reminds me of you🤗🎶
+    </a>
+    <p>Yours mysterious partner</p>
+    <p>John</p>
+
+</body>
+
+<script>
+        const text= "I didn't mean to hurt your feelings... I still wated to make you smile🥺"
+        const elements = document.querySelectorAll(".fade-in");
+
+        let index = 0;
+        let started = false;
+
+        function typeWriter(){
+            if(index < text.length){
+                document.getElementById("typewriter").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, 40); //speed (lower = faster)
+            }
+        }
+        window.addEventListener("scroll", () => {
+        elements.forEach(el => {
+        const position = el.getBoundingClientRect().top;
+        const screenHeight = window.innerHeight;
+
+        if (position < screenHeight - 50) {
+        el.classList.add("show");
+
+        //Start typing ONLY when final section appears
+        if (el.id === "finalSection" && !started) {
+            started = true;
+            setTimeout(typeWriter, 60); // slight delay feels smoother
+    }
+    }
+  });
+});
+    </script>
